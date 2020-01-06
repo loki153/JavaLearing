@@ -7,6 +7,7 @@ package StrategyMode;
  * @Description:
  */
 public class FantasyWorld {
+    //根据需要可以装配不同的策略
     public static void main(String[] args){
         Character c1 = new Grounder();
         c1.setDisplay(new Human());
