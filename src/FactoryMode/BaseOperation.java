@@ -6,7 +6,7 @@ package FactoryMode;
  * @Project: JavaLearing
  * @Description:
  */
-public class BaseOpertaion {
+public class BaseOperation {
     private long inputA;
     private long inputB;
 

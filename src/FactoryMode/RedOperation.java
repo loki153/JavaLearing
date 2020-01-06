@@ -6,7 +6,7 @@ package FactoryMode;
  * @Project: JavaLearing
  * @Description:
  */
-public class RedOperation extends BaseOpertaion{
+public class RedOperation extends BaseOperation {
     @Override
     public long getResult(long a, long b){
         return a - b;

@@ -6,7 +6,7 @@ package FactoryMode;
  * @Project: JavaLearing
  * @Description:
  */
-public class DivOperation extends BaseOpertaion {
+public class DivOperation extends BaseOperation {
     @Override
     public long getResult(long a, long b){
         long c = 0;
