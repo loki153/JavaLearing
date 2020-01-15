@@ -90,6 +90,44 @@ Decorator3 dc3 = new Decorator3(dc2);
 ```
 
 # 代理模式
+* 代理模式：为其他对象提供一种代理，以控制对这个对象的访问。代理对象在客户端和目标对象之间起到中介的作用。
+* 优势
+    * 1.代理模式将代理对象与真实对象被调用的目标对象分离；
+    * 2.一定程度上降低了系统的耦合度，扩展性好；
+    * 3.保护目标对象；
+    * 4.增强目标对象
+* 劣势
+    * 1.代理模式会造成系统设计中类的数目增加；
+    * 2.在客户端和目标对象增加一个代理对象，会造成请求处理速度变慢；
+    * 3.增加了系统的复杂度；
+* 代理模式，首先需要为客户和代理提供一个共用的接口，然后将客户的实例对象组合到代理的实例中，从而使得代理既可以使用自身的方法实现客户无法实现的逻辑，也可以为客户的相关方法（也就是双方事先约定的方法）提供代理。
+```
+abstract class subject
+{
+    public abstract void Request();
+}
+```
+```
+class RealSubject: implements Subject
+{
+    public override void Request()
+    {
+     ...
+     }
+} 
+```
+```
+class Proxy implements Subject
+{
+    RealSubject realSubject;
+    public override void Request()
+    {
+    ...
+    realSubject.request();
+    ...
+    }
+}
+```
 # 工厂方法模式
 # 原型模式 
 # 模板方法模式
