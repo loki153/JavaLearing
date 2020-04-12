@@ -1,4 +1,4 @@
-package FactoryMode_5;
+package ProxyMode_4;
 
 public class Test {
 }
