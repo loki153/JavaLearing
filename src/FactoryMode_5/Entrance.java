@@ -9,5 +9,11 @@ public class Entrance {
         AvatarFactory factory2 = new WerewolfFactory();
         Avatar player2 = factory2.CreateAvatar();
         player2.attack();
+
+
+
+        System.out.println(player1 instanceof Human);
     }
+
+
 }
