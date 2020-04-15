@@ -202,10 +202,29 @@ public void methodA()
  
  Product p2 = b2.getResult();//通过b2进行建造
  p2.show();
- ```
+```
+
  
 # 14.观察者模式
+
 * 观察者模式:定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象，这个主题对象发生变化时，会通知所有观察者对象，使它们能够自动更新自己。
+* 观察者模式：
+    1. 需要抽象通知者、抽象观察者；
+    2. 抽象通知者将抽象观察者加到自己维护的一个列表中；
+    3.每当抽象观察者发现状态发生变化时，调用自身notify方法，则遍历列表中的对象，并调用其update（）方法
+
+```
+ConcreteSubject s = new ConcreteSubject();
+s.attach(new ConcreteOberserver(s,"X");//观察者has通知者，通知者也需要attach观察者
+s.attach(new ConcreteOberserver(s,"Y");
+s.attach(new ConcreteOberserver(s,"Z");
+
+s.subjectState = "changed";//观察对象发生变化
+s.Notify();//此处每一个观察者就会执行其update方法
+```
+**观察者模式所做的工作是在接触耦合，让耦合的双方都依赖于抽象，而不是依赖于具体，从而使得各自的变化都不会影响另一边的变化**
+    
+
 # 15.抽象工厂模式
 * 抽象工厂：提供一个创建一系列相关或者相互依赖对象的接口，而无需指定它们具体的类。
 * 依赖注入：
