@@ -227,8 +227,32 @@ s.Notify();//此处每一个观察者就会执行其update方法
 
 # 15.抽象工厂模式
 * 抽象工厂：提供一个创建一系列相关或者相互依赖对象的接口，而无需指定它们具体的类。
-* 依赖注入：
-* 反射：
+``` 
+User user = new User();//用户表对象
+Department dept = new Department();//部门表对象
+
+//IFactory factory = new MySQLFactory();
+IFactory factory = new OralcleFactory();//在这里选择实例化哪一类工厂
+
+Iuser iu = factory.CreateUser();
+...
+
+IDepartment id = factory.CreateDepartment();//到这个环节已经与具体的类解除了依赖
+
+```
+* 简单工厂+ 反射： 抽象工厂中选取哪一个工厂类的判断，可以参考简单工厂的实现方法（switch），进一步的，使用如下方法替代switch方法：
+```
+Iuser result = (IUser)Assembly.Load("抽象工厂模式").CreateInstance("抽象工厂模式.MySQLUser");
+```
+
+* 配置文件 + 反射：通过添加外部配置文件的方法，替代简单工厂中的具体字符串，减少了修改程序的必要
+```
+private static readonly String db = ConfigurationManager.AppSettings["DB]
+
+<appSettings>
+    <add key ="DB" value = "MySQL"/>
+</appSettings>
+```
 # 16.状态模式
 # 17.适配器模式
 # 18.备忘录模式
